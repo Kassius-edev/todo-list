@@ -27,6 +27,7 @@ function addTask() {
 
   input.value = "";
   showTasks();
+  input.focus();
 }
 
 function showTasks() {
@@ -69,3 +70,10 @@ function memoryItems() {
 
 memoryItems();
 button.addEventListener("click", addTask);
+
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    showTasks();
+    addTask();
+  }
+});
